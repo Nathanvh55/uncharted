@@ -1,28 +1,28 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
-import A from './A';
-import Img from './Img';
-import NavBar from './NavBar';
-import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
-import messages from './messages';
+import {
+  Navbar,
+  Nav,
+  NavDropdown,
+} from 'react-bootstrap';
 
 function Header() {
   return (
-    <div>
-      <A href="https://www.reactboilerplate.com/">
-        <Img src={Banner} alt="react-boilerplate - Logo" />
-      </A>
-      <NavBar>
-        <HeaderLink to="/">
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
-        </HeaderLink>
-      </NavBar>
-    </div>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand href="/">UNCHARTED</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="navbardropdown">
+          <NavDropdown title="Tracks" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="/">Top 25</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#search/">Search</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link href="#addsong/">Add A Song</Nav.Link>
+          <Nav.Link href="#about/">About</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
