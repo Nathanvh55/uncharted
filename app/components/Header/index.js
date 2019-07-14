@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './logo.png';
 
 import {
   Navbar,
@@ -9,7 +10,11 @@ import {
 function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/">UNCHARTED</Navbar.Brand>
+      <a>
+        <img src={logo} style={{width:40, marginTop: 0, marginBottom: 3 , marginLeft: -5, marginRight: 15 }} />
+      </a>
+      <Navbar.Brand href="/">UNCHARTED
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="navbardropdown">
